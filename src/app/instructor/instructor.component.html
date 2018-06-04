@@ -1,0 +1,21 @@
+<div class="container">
+	<div class="row mt-5" *ngFor="let instruct of instjson">
+		<div class="col-sm-12">
+			<div class="media">
+			  <img class="align-self-center mr-3" src="{{instruct.img}}" alt="Generic placeholder image">
+			  <div class="media-body">
+				<h5 class="mt-0">Name:{{instruct.Name}}</h5>
+				<a>My Work:{{instruct.links}}</a>
+				<p class="mb-0">Course:{{instruct.course}}</p>
+                <ngb-rating [(rate)]="currentRate">
+				  <ng-template let-fill="fill" let-index="index">
+					<span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+				  </ng-template>
+				</ngb-rating>
+				<pre>Rate: <b>{{instruct.currentRate}}</b></pre>
+                <hr>
+              </div>
+             </div>
+		</div><!-- column -->
+	</div><!-- row -->
+</div><!-- container -->
